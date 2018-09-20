@@ -1,0 +1,55 @@
+
+http://tomcat.apache.org
+servlet 3.0   tomcat7
+servlet 3.1   tomcat8 支持注解
+
+Tomcat启动需要正确安装JDK
+
+
+查看端口占用情况：
+	netstat -nao
+	
+	
+bin 脚本文件
+conf 配置文件
+logs 日志文件
+temp  tomcat运行时产生的临时文件
+webapps web项目发布的路径
+	docs 用户指南
+	examples 例子
+	manager
+	host-manager  管理
+work 工作目录，有所有项目目录，存放jsp被访问后生成的对应的server文件和class文件
+license 许可文件
+
+
+
+
+URL 统一资源定位符       URI 统一资源标识符
+
+管理虚拟目录
+
+	1.conf/server.xml
+	2.在host节点添加配置：<Context path="" docBase="D:\run" reloadable="false"/> 写错无法重启
+	docBase为虚拟目录地址
+	reloadable属性为true修改class文件后会自动重启，为false修改文件后需要手动重启
+
+修改server.xml以后必须重启才能生效
+
+
+Tomcat管理页面
+	conf/tomcat-users.xml
+	设置权限和错误
+
+
+
+
+
+
+
+
+
+
+
+
+

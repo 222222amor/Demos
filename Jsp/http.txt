@@ -1,0 +1,8 @@
+500 服务器错误
+302 重定向
+502 错误的网关
+
+content-type
+响应体还可以是：pdf、html、xml、json、word
+这些由文档类型决定：content-type 指定mime类型    MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。
+常用的是：text/html,text/xml,application/pdf,application/json
