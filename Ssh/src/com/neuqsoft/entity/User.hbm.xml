@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" "hibernate-mapping-3.0.dtd">
+<!-- 
+	package属性：填写一个包名，在元素内部但凡是需要书写完整类名的属性，
+				 可以直接简写类名
+ -->
+<hibernate-mapping package="com.neuqsoft.entity">
+	<class name="User" table ="db_user">
+		<id name="id" column="id">
+		<!-- generator：主键生成策略 （下节课讲）就是每条记录录入时，主键的生成规则
+				
+				identity:主键自增，由数据库来维护主键值，录入时不需要指定主键
+				sequence:Oracle 中的主键生成策略
+				
+				increment（了解）:主键自增，由hibernate来维护，每次插入前会先查询表中的id最大值，+1作为新增主键
+				
+				hilo(了解):高低位运算，主键自增 ，由hibernate来维护，开发是不使用
+			
+				native: hilo + sequence + identity 自动三选一策略d
+				
+				uuid:产生随机的字符串作为主键 ，主键的类型必须为String 类型
+				
+				assigned: 自然主键生成策略，hibernate不会管理主键值，由开发人员自己录入
+			 -->
+			<generator class="uuid"></generator>
+		</id>
+		<!-- 
+			property：除了id之外的普通属性映射
+				name:填写属性名
+				column:填写表列名
+				type:(可选)：填写列或属性的类型，不写，hibernate会自动检测实体的属性类型
+						每个类型有三种写法： java类型 | hibernate类型 |数据库类型
+											java.lang.Integer| java | varchar
+				not-null（可选）:配置列或属性是否不能为空 ，默认值：false 为空
+				length(可选):配置数据库中列的长度，默认值：使用数据库类型的最大长度
+		 -->
+		<property name="userName" column="user_name"></property>
+		<property name="password" column="password"></property>
+		<property name="picture" column="picture"></property>
+		<property name="money" column="money"></property>
+	</class>
+</hibernate-mapping>
