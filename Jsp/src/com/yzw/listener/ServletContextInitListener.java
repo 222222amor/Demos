@@ -39,20 +39,29 @@ import javax.servlet.http.Part;
 
 /**
  * servletContext监听器
+ * @ClassName:  ServletContextInitListener   
+ * @Description:TODO()   
+ * @author: 尹志文 
+ * @date:   2018年9月20日 下午8:56:24   
+ *     
+ * @Copyright: 2018 2583661140@qq.com All rights reserved. 
+ *
  */
 //@WebListener
 public class ServletContextInitListener implements ServletContextListener, ServletContextAttributeListener,HttpSessionListener,ServletRequestListener {
 
-    /**
-     * Default constructor. 
-     */
+ 
     public ServletContextInitListener() {
         // TODO Auto-generated constructor stub
     }
 
 	/**
-     * @see ServletContextAttributeListener#attributeAdded(ServletContextAttributeEvent)
-     */
+	 * 
+	 * <p>Title: attributeAdded</p>   
+	 * <p>Description: </p>   
+	 * @param arg0   
+	 * @see javax.servlet.ServletContextAttributeListener#attributeAdded(javax.servlet.ServletContextAttributeEvent)
+	 */
     public void attributeAdded(ServletContextAttributeEvent arg0)  { 
          // TODO Auto-generated method stub
     }
