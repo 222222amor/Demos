@@ -11,6 +11,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.yzw.listener.ServletContextInitListener;
 
 /**
  * Servlet implementation class CookieServlet
@@ -55,9 +58,18 @@ public class CookieServlet extends HttpServlet {
 		response.addCookie(cookie1);
 		response.addCookie(cookie2);
 		
+		HttpSession session = request.getSession();
 		
 		PrintWriter out = response.getWriter();
 		out.println(cookie);
+		if(session.isNew()) {
+			out.println("第一次来");
+		}else {
+			out.println("回头客");
+		}
+		out.println(session);
+		out.println("当前会话总数是：" + ServletContextInitListener.s);
+		
 	}
 
 }

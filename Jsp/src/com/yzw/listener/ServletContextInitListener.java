@@ -50,6 +50,7 @@ import javax.servlet.http.Part;
 //@WebListener
 public class ServletContextInitListener implements ServletContextListener, ServletContextAttributeListener,HttpSessionListener,ServletRequestListener {
 
+	public static int s;
  
     public ServletContextInitListener() {
         // TODO Auto-generated constructor stub
@@ -145,9 +146,13 @@ public class ServletContextInitListener implements ServletContextListener, Servl
 
 	@Override
 	public void sessionCreated(HttpSessionEvent arg0) {
+		s++;
 		HttpSession session = arg0.getSession();
 		String count = session.getServletContext().getAttribute("count") + "";
 		session.getServletContext().setAttribute("count", Integer.parseInt(count) + 1 +"");
+		if(session.isNew()) {
+			System.out.println("创建会话：" + session.getId());
+		}
 		System.out.println("访问量：" + session.getServletContext().getAttribute("count"));
 		
 	}
@@ -171,7 +176,7 @@ public class ServletContextInitListener implements ServletContextListener, Servl
 		ServletRequest res = arg0.getServletRequest();
 		
 		//if(res.getRemoteHost())
-		String count = sc.getAttribute("count") + "";
+		String count = sc.getAttribute("count") + ""; 
 		sc.setAttribute("count", Integer.parseInt(count) + 1);
 		System.out.println("ip：" + res.getRemoteAddr() + ",访问量加一");
 	}
