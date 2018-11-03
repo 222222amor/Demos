@@ -33,8 +33,8 @@ public class JDBCUtils {
 	//数据库连接池，应只被初始化一次
 	//c3p0
 	static {
-		dataSource = new ComboPooledDataSource("c3p0_mysql");//mysql
-//		dataSource = new ComboPooledDataSource("c3p0_oracle");//oracle
+//		dataSource = new ComboPooledDataSource("c3p0_mysql");//mysql
+		dataSource = new ComboPooledDataSource("c3p0_oracle");//oracle
 //		dataSource = new ComboPooledDataSource("c3p0_sqlserver");//sqlserver
 	}
 	
@@ -225,7 +225,7 @@ public class JDBCUtils {
 					entity = clazz.newInstance();
 					//3)使用反射为对象的每个属性赋值ֵ
 					for(Map.Entry<String, Object> entry:values.entrySet()) {
-						ReflectionUtils.setFieldValue(entity, entry.getKey(), entry.getValue());
+						ReflectionUtils.setFieldValue(entity, entry.getKey().toLowerCase(), entry.getValue());//改为小写字段名
 					}
 					//4)将已赋值的对象存入list中
 					objs.add(entity);

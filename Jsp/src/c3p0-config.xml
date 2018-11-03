@@ -24,8 +24,8 @@
   
   <named-config name="c3p0_oracle">
   	<!-- 指定连接数据源的基本属性 -->
-  	<property name="user">hr</property> 
-  	<property name="password">yzw747452</property> 
+  	<property name="user">yzwii</property> 
+  	<property name="password">yzwii</property> 
   	<property name="driverClass">oracle.jdbc.driver.OracleDriver</property> 
   	<property name="jdbcUrl">jdbc:oracle:thin:@localhost:1521:orcl</property> 
   	
