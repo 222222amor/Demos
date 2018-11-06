@@ -74,24 +74,26 @@ public class MyServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
-		out.println(username);
-		out.print(password);
-		out.println(request.getQueryString());
-		out.println(request.getRemoteAddr());
-		out.println(request.getRemoteHost());
-		out.println(request.getRemotePort());
-		out.println(request.getRemoteUser());
-		out.println();
-		out.println(request.getLocalAddr());
-		out.println(request.getLocalName());
-		out.println(request.getLocalPort());
-		out.println("reqSessionId:" + request.getRequestedSessionId());
-		out.println("URI:" + request.getRequestURI());
-		out.println("url:" + request.getRequestURL().toString());
-		out.println("contenttype:" + request.getContentType());
-		out.println("getDateHeader:" + request.getDateHeader(username));
-		out.println("getHeader:" + request.getHeader(username));
-		out.close();
+//		out.println(username);
+//		out.print(password);
+//		out.println(request.getQueryString());
+//		out.println(request.getRemoteAddr());
+//		out.println(request.getRemoteHost());
+//		out.println(request.getRemotePort());
+//		out.println(request.getRemoteUser());
+//		out.println();
+//		out.println(request.getLocalAddr());
+//		out.println(request.getLocalName());
+//		out.println(request.getLocalPort());
+//		out.println("reqSessionId:" + request.getRequestedSessionId());
+//		out.println("URI:" + request.getRequestURI());
+//		out.println("url:" + request.getRequestURL().toString());
+//		out.println("contenttype:" + request.getContentType());
+//		out.println("getDateHeader:" + request.getDateHeader(username));
+//		out.println("getHeader:" + request.getHeader(username));
+//		out.close();
+		
+		
 	}
 
 }
