@@ -12,6 +12,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
+
 /**
  * 过滤器
  * @ClassName:  MyFilter   
@@ -25,9 +27,11 @@ import javax.servlet.http.HttpServletRequest;
 @WebFilter(filterName="myFilter",urlPatterns="/*")
 public class MyFilter implements Filter{
 
+	public static Logger  logger =  Logger.getLogger(MyFilter.class);
+	
 	@Override
 	public void destroy() {
-		System.out.println("myFilter destroy ...");
+		logger.info("myFilter destroy ...");
 		
 	}
 
@@ -41,15 +45,14 @@ public class MyFilter implements Filter{
 		ServletContext context = req.getServletContext();
 		String s = context.getServletContextName();
 		
-		System.out.println(ip + "访问了" + s);
+		logger.info(ip + "访问了" + s);
 		
 		arg2.doFilter(req, arg1);
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		System.out.println("myFilter init ...");
-		
+		logger.info("myFilter init ...");
 	}
 
 }
